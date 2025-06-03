@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | MinT</title>
+    <link rel="stylesheet" href="../Admin/recordofficeAdmin.css">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../switcher.css" />
+    <link rel="stylesheet" href="../color-1.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+</head>
+<body class="system_admin"> <!-- Defaulting to system_admin for demo -->
+    <header class="headAdmin">
+        <div class="logo">
+            <img src="../logo/Ministry_of_Innovation_and_Technology_Ethiopia_removebg_preview.png" alt="Logo">
+        </div>
+        <div class="box">
+            <a href="#profile"><h3 class="navlinks activenav" onclick="convertsection('profile')"><i class='bx bx-home-alt-2'></i>Profile</h3></a>
+            <a href="#signup" id="nav-signup"><h3 class="navlinks" onclick="convertsection('signup')"><i class='bx bx-user-plus'></i>Add User</h3></a>
+            <a href="#messages"><h3 class="navlinks" onclick="convertsection('messages')"><i class='bx bxs-chat'></i>Messages</h3><span>12</span></a>
+            <a href="#setting"><h3 class="navlinks" onclick="convertsection('setting')"><i class='bx bx-cog'></i>Manage</h3></a>
+            <a href="../index.html"><h3><i class='bx bx-log-out'></i>Logout</h3></a>
+        </div>
+    </header>
+
+    <section class="sections profile activesec" id="profile">
+        <div class="hero">
+            <div class="card">
+                <h1>Demo Administrator</h1>
+                <p>@system_admin</p>
+                <img src="./uploads/profile.jpg" alt="Profile Image" id="profile-pic" onerror="this.src='../Image/MintProfile.png'">
+                <div style="margin-top: 20px;">
+                    <button style="padding: 10px 20px; background: var(--skin-color); color: white; border: none; border-radius: 5px; cursor: pointer;">Edit Profile</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sections messages" id="messages">
+        <div class="newBoundary">
+            <div class="messagesBanker"><h1>New Messages</h1></div>
+            <div class="savechanges stored"><a href="#" id="toggleNewButton">Messages</a><span>3</span></div>
+        </div>
+        
+        <div id="NewMessagesTable" style="display: block;"> <!-- Visible for demo -->
+            <div class="tableBox">
+                <table>
+                    <tr class="heading">
+                        <td>#</td>
+                        <td class="Description">Description</td>
+                        <td>Type</td>
+                        <td>Send</td>
+                        <td>Decline</td>
+                        <td>Department</td>
+                        <td>Letter ID</td>
+                    </tr>
+                    <tr class="lists">
+                        <td class="nlists">1</td>
+                        <td class="dlists">Request for Research Grant</td>
+                        <td><div class="letter-icon"><i class='bx bxs-envelope'></i></div></td>
+                        <td><h4 class="off-status">OFF</h4></td>
+                        <td><h4 class="off-status">OFF</h4></td>
+                        <td>
+                            <select class="department-select">
+                                <option>IT Department</option>
+                                <option>Computer Department</option>
+                                <option selected>Research Dept</option>
+                            </select>
+                        </td>
+                        <td class="nlists">L-1024</td>
+                    </tr>
+                    <tr class="lists">
+                        <td class="nlists">2</td>
+                        <td class="dlists">Hardware Upgrade Invoice</td>
+                        <td><img src="../Image/3p.png" style="width: 40px; border-radius: 4px;"></td>
+                        <td><h4 class="on-status">ON</h4></td>
+                        <td><h4 class="off-status">OFF</h4></td>
+                        <td>
+                            <select class="department-select">
+                                <option selected>IT Department</option>
+                                <option>Computer Department</option>
+                            </select>
+                        </td>
+                        <td class="nlists">IMG-982</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="savechanges stored" style="margin-top: 30px;">
+            <a href="#" id="toggleAcceptedButton">Accepted Messages</a><span>8</span>
+        </div>
+
+        <div class="savechanges stored">
+            <a href="#" id="toggleApproveButton">Approved Storage</a><span>45</span>
+        </div>
+    </section>
+
+    <section class="sections setting" id="setting">
+        <div class="savechanges stored">
+            <a href="#">Contact Users (Live Feed)</a>
+        </div>
+        <div class="contact_table" style="display: block;">
+            <table class="admintableBox">
+                <tr>
+                    <th>#</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Reason</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Abebe Bikila</td>
+                    <td>abebe@example.com</td>
+                    <td>0911223344</td>
+                    <td>Inquiry about innovation hub</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Selam Tesfaye</td>
+                    <td>selam@example.com</td>
+                    <td>0922334455</td>
+                    <td>Technical support request</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Style Switcher -->
+    <div class="style-switch">
+        <div class="style-switch-toggler s-icon"><i class="bx bx-cog"></i></div>
+        <div class="day-night s-icon"><i class="bx"></i></div>
+        <h4>Theme Colors</h4>
+        <div class="colors">
+            <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+            <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+            <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+            <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+            <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+        </div>
+    </div>
+
+    <!-- Script to handle section switching for demo -->
+    <script>
+        function convertsection(id) {
+            document.querySelectorAll('.sections').forEach(sec => sec.classList.remove('activesec'));
+            document.getElementById(id).classList.add('activesec');
+            document.querySelectorAll('.navlinks').forEach(link => link.classList.remove('activenav'));
+            event.currentTarget.classList.add('activenav');
+        }
+
+        // Style switcher logic
+        const styleSwitcherToggle = document.querySelector(".style-switch-toggler");
+        styleSwitcherToggle.addEventListener("click", () => {
+            document.querySelector(".style-switch").classList.toggle("open");
+        });
+
+        function setActiveStyle(color) {
+            // Placeholder: index.html styles will handle this usually
+            console.log("Switching to color: " + color);
+        }
+    </script>
+</body>
+</html>
